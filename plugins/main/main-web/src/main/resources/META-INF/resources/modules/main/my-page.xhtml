@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+        >
+
+<h:head>
+</h:head>
+
+<h:body>
+
+    <ui:composition template="#{vr.privateTemplatePath}">
+        <ui:define name="content">
+            <h:form >
+                <!--put your content here-->
+                <h:outputText value="#{myPageCtrl.model.message}"/>
+                <br/>
+                <h:outputText value="#{myPageCtrl.model.counter}"/>
+                <br/>
+                <h:commandButton action="#{myPageCtrl.onUpdateCounter}" value=" counter"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+
+</h:body>
+
+</html>
