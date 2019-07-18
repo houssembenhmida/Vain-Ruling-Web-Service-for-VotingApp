@@ -2,11 +2,11 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>tn.eniso.test.plugins.main</groupId>
+    <groupId>tn.eniso.iot.plugins.main</groupId>
     <artifactId>main-service</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>tn.eniso.test.plugins.main.main-service</name>
+    <name>tn.eniso.iot.plugins.main.main-service</name>
     <url>https://github.com/thevpc/vr/wiki</url>
 
     <parent>
@@ -17,8 +17,8 @@
 
     <properties>
         <vr-plugin.component-type>service</vr-plugin.component-type>
-        <vr-plugin.name>test main Plugin</vr-plugin.name>
-        <vr-plugin.description>test main Plugin</vr-plugin.description>
+        <vr-plugin.name>iot main Plugin</vr-plugin.name>
+        <vr-plugin.description>iot main Plugin</vr-plugin.description>
         <version.vr>1.13.12</version.vr>
     </properties>
     <!-- https://mvnrepository.com/artifact/org.json/json -->

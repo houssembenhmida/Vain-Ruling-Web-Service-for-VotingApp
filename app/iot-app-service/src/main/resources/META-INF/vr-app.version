@@ -1,0 +1,14 @@
+short-name = iot
+long-name = iot2
+id = iot
+version = 1.0
+build-date = 2019-02-12
+build-number = 1
+author = Houssem
+author-url = http://Houssem-company.com
+author-affiliation = Houssem company
+default-public-theme = crew
+default-private-theme = crew
+config.company=My Company
+config.country=Tunisia
+config.industry=Services

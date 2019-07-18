@@ -1,12 +1,15 @@
 package tn.eniso.main.web;
 
+import java.util.List;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import net.vpc.app.vainruling.core.service.CorePlugin;
 import net.vpc.app.vainruling.core.web.OnPageLoad;
 import net.vpc.app.vainruling.core.web.VrController;
-import tn.eniso.main.service.*;
+import tn.eniso.main.model.TeamOrder;
+import tn.eniso.main.service.IotMainPlugin;
+
 
 /**
  * MyPage component implementation.
@@ -17,7 +20,7 @@ import tn.eniso.main.service.*;
  */
 @VrController(
         // bind controller to the menu
-        menu = "/IOT Challenge",
+        menu = "/MyMenu",
         // bind controller to the xhtml page
         url = "modules/main/my-page",
         // define security access user should have to use this component
@@ -33,7 +36,7 @@ public class MyPageCtrl {
     private CorePlugin core;
 
     @Autowired
-    private TestMainPlugin main;
+    private IotMainPlugin main;
 
     public Model getModel() {
         return model;
@@ -50,46 +53,35 @@ public class MyPageCtrl {
      */
     @OnPageLoad
     private void init(Config conf) {
-        if (conf != null) {
-            getModel().setCounter(conf.initialCounter);
-        }
-        getModel().setMessage("Hello World from " + core.getCurrentUserLogin());
+//        main.getFinalScores();
+        getModel().setTeams(main.getTeamOrder());
+        
     }
 
     /**
      * controller action
      */
-    public String onUpdateCounter() {
-        //update model
-        getModel().setCounter(getModel().getCounter() + 1);
-        //return to the same page
-        return null;
-    }
+//    public String onUpdateCounter() {
+//        //update model
+//        getModel().setCounter(getModel().getCounter() + 1);
+//        //return to the same page
+//        return null;
+//    }
 
     /**
      * Model Class for the current Controller (MVC Pattern enforced)
      */
     public static class Model {
 
-        private String message;
-        private int counter;
+        private List<TeamOrder> teams;
 
-        public String getMessage() {
-            return message;
+        public List<TeamOrder> getTeams() {
+            return teams;
         }
 
-        public void setMessage(String message) {
-            this.message = message;
+        public void setTeams(List<TeamOrder> teams) {
+            this.teams = teams;
         }
-
-        public int getCounter() {
-            return counter;
-        }
-
-        public void setCounter(int counter) {
-            this.counter = counter;
-        }
-
     }
 
     /**
@@ -97,7 +89,7 @@ public class MyPageCtrl {
      */
     public static class Config {
 
-        int initialCounter;
+     
     }
 }
  

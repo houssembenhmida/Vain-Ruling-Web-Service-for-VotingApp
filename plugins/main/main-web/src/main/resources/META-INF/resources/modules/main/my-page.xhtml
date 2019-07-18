@@ -14,12 +14,24 @@
     <ui:composition template="#{vr.privateTemplatePath}">
         <ui:define name="content">
             <h:form >
-                <!--put your content here-->
-                <h:outputText value="#{myPageCtrl.model.message}"/>
-                <br/>
-                <h:outputText value="#{myPageCtrl.model.counter}"/>
-                <br/>
-                <h:commandButton action="#{myPageCtrl.onUpdateCounter}" value=" counter"/>
+                <p:dataTable var="team" value="#{myPageCtrl.model.teams}" >
+                    <p:column headerText="Ranking">
+                        <h:outputText value="#{team.order}"/>
+                    </p:column>
+                    <p:column headerText="Team name">
+                        <h:outputText value="#{team.team.teamName}"/>
+                    </p:column>
+                    <p:column headerText="Team Project">
+                        <h:outputText value="#{team.team.teamProject}"/>
+                    </p:column>
+                    <p:column headerText="Score">
+                        <h:outputText value="#{team.team.finalScore}"/>
+                    </p:column>
+                    <p:column headerText="Judge Appreciation">
+                        <h:outputText value="#{team.team.finalJuryAppriciation}"/>
+                    </p:column>
+                    
+                </p:dataTable>
             </h:form>
         </ui:define>
     </ui:composition>
